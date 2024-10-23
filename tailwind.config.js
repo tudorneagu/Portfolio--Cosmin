@@ -1,7 +1,12 @@
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        megrim: ["Megrim", "cursive"],
+        poppins: ["Poppins", "cursive"],
+      },
+    },
   },
   plugins: [],
 };
