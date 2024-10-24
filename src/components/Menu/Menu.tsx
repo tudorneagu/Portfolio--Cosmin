@@ -12,10 +12,10 @@ function Menu({
   const [isSubMenuVisible, setIsSubMenuVisible] = useState("hover:underline");
   const observerRef = useRef<IntersectionObserver | null>(null);
   const isManualScroll = useRef(false);
-  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
+  const scrollTimeout = useRef<number | null>(null);
 
   // Handle scrolling to the section
-  function handleScroll(id) {
+  function handleScroll(id: string) {
     const element = sectionRefs[id]?.current;
     if (element) {
       // Disable the observer during manual scrolling

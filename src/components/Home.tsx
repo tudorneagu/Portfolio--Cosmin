@@ -14,11 +14,10 @@ const images = [
   "/images/010.jpg",
 ];
 
-const Home = React.forwardRef<HTMLDivElement>((props, ref) => {
+const Home = React.forwardRef<HTMLDivElement>((_, ref) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
-  // Function to switch to the next image
   const toggleImage = () => {
     setFade(false); // Start fade-out
     setTimeout(() => {

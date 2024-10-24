@@ -1,7 +1,7 @@
 // Journal.tsx
 import React from "react";
 
-const Price = React.forwardRef<HTMLDivElement>((props, ref) => {
+const Price = React.forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <div ref={ref} id="price-section" className="h-screen bg-blue-300">
       Prices
