@@ -4,14 +4,12 @@ import React, { useState, useEffect } from "react";
 const images = [
   "/images/001.jpg",
   "/images/002.jpg",
-  "/images/009.jpg",
+
   "/images/003.jpg",
   "/images/004.jpg",
-  "/images/008.jpg",
+
   "/images/005.jpg",
   "/images/006.jpg",
-  "/images/007.jpg",
-  "/images/010.jpg",
 ];
 
 const Home = React.forwardRef<HTMLDivElement>((_, ref) => {
@@ -36,17 +34,18 @@ const Home = React.forwardRef<HTMLDivElement>((_, ref) => {
       <div
         ref={ref}
         id="home-section"
-        className="flex justify-end h-screen overflow-clip">
+        className="relative h-screen overflow-clip flex justify-end">
+        {/* The image positioned on the right side */}
         <img
           src={images[currentImageIndex]}
           alt={`Slide ${currentImageIndex + 1}`}
-          className={
-            fade
-              ? " h-screen w-auto fade-enter-active"
-              : " h-screen w-auto fade-exit-active"
-          }
+          className={`absolute right-0 w-[90vw] h-auto transition-opacity duration-1000 ${
+            fade ? "fade-enter-active" : "fade-exit-active"
+          }`}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent "></div>
+
+        {/* The gradient overlay aligned with the image */}
+        <div className="absolute right-0 w-[90vw] h-full bg-gradient-to-r from-white via-20% via-transparent to-transparent"></div>
       </div>
     </section>
   );

@@ -24,7 +24,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="flex flex-col w-screen relative">
+      <div className="flex flex-col w-screen  relative">
         <header className="top-0 fixed z-50 ">
           <Menu sectionRefs={sectionRefs} />
         </header>
