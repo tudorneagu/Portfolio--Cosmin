@@ -8,6 +8,7 @@ function Menu({
   sectionRefs,
   textColor,
 }: {
+  textColor: string;
   sectionRefs: { [key: string]: React.RefObject<HTMLDivElement> };
 }) {
   const [activeSection, setActiveSection] = useState("hover:underline");

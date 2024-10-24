@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import type { Dispatch, SetStateAction } from "react";
 import MenuItem from "../MenuItem";
 
 import SubMenuItem from "../SubMenuItem";
@@ -7,11 +8,13 @@ function MobileMenu({
   sectionRefs,
   color,
   toggleMenu,
-  handleToggleMenu, // Received as prop
+  handleToggleMenu,
+  setToggleMenu, // Received as prop
 }: {
   color: string;
   sectionRefs: { [key: string]: React.RefObject<HTMLDivElement> };
-  toggleMenu: boolean; // Prop type for the toggle state
+  toggleMenu: boolean;
+  setToggleMenu: Dispatch<SetStateAction<boolean>>; // Prop type for the toggle state
   handleToggleMenu: () => void; // Prop type for the toggle handler
 }) {
   const [activeSection, setActiveSection] = useState("");

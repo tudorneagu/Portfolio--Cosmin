@@ -54,7 +54,8 @@ function App() {
               <MobileMenu
                 color={titleColor}
                 sectionRefs={sectionRefs}
-                toggleMenu={toggleMenu} // Pass the state
+                toggleMenu={toggleMenu}
+                setToggleMenu={setToggleMenu}
                 handleToggleMenu={handleToggleMenu}
               />
               <div className="absolute top-4 -right-4 z-50">
