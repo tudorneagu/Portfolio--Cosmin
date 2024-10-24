@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import MenuItem from "../MenuItem";
-import Social from "../Social";
+
 import SubMenuItem from "../SubMenuItem";
 
 function MobileMenu({
