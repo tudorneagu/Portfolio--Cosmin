@@ -41,7 +41,7 @@ const Home = React.forwardRef<HTMLDivElement>((_, ref) => {
         <img
           src={images[currentImageIndex]}
           alt={`Slide ${currentImageIndex + 1}`}
-          className={`absolute right-0  h-screen transition-opacity duration-1000 ${
+          className={`absolute right-0  object-cover h-screen transition-opacity duration-1000 ${
             fade ? "fade-enter-active" : "fade-exit-active"
           }`}
         />
