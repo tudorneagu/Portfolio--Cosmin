@@ -7,6 +7,7 @@ import SubMenuItem from "../SubMenuItem";
 function MobileMenu({
   sectionRefs,
   color,
+
   toggleMenu,
   handleToggleMenu,
   setToggleMenu, // Received as prop

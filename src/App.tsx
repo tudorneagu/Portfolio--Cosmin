@@ -68,7 +68,7 @@ function App() {
           )}
         </header>
         <main>
-          <Home isMobile={isMobile} setTitleColor={setTitleColor} />
+          <Home setTitleColor={setTitleColor} />
           <About ref={sectionRefs["about-section"]} />
           <Journal ref={sectionRefs["journal-section"]} />
           <Portfolio ref={sectionRefs["portfolio-section"]} />
