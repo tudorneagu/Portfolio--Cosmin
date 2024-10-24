@@ -36,9 +36,9 @@ const Home = React.forwardRef<HTMLDivElement>((_, ref) => {
       <div
         ref={ref}
         id="home-section"
-        className="relative h-screen overflow-clip flex justify-between ">
+        className="relative h-screen overflow-clip flex justify-end md:justify-between ">
         {/* The image positioned on the right side */}
-        <div className="min-w-[300px] bg-white z-20 hidden md:visible"></div>
+        <div className="min-w-[300px] bg-white z-20 hidden md:block"></div>
         <img
           src={images[currentImageIndex]}
           alt={`Slide ${currentImageIndex + 1}`}
