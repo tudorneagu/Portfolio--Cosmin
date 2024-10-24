@@ -38,6 +38,7 @@ function MobileMenu({
       scrollTimeout.current = setTimeout(() => {
         isManualScroll.current = false;
       }, 800); // Adjust timeout according to scroll speed
+      setToggleMenu(false);
     }
   }
 
