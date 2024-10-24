@@ -206,7 +206,7 @@ function MobileMenu({
           </nav>
         </section>
         <h2
-          className={`absolute bottom-10  capitalize  [writing-mode:vertical-lr] rotate-180 menu-text-active left-[10.5rem] transform transition-transform duration-500 ease-in-out ${
+          className={`absolute bottom-14  capitalize  [writing-mode:vertical-lr] rotate-180 menu-text-active left-[10.5rem] transform transition-transform duration-500 ease-in-out ${
             toggleMenu ? "translate-x-0" : "-translate-x-[120px]"
           }`}>
           {activeSection ? `${sectionName}` : ""}
