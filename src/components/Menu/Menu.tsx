@@ -1,4 +1,7 @@
 import { useEffect, useState, useRef } from "react";
+import MenuItem from "./MenuItem";
+import Social from "./Social";
+import SubMenuItem from "./SubMenuItem";
 
 function Menu({
   sectionRefs,
@@ -8,11 +11,11 @@ function Menu({
   const [activeSection, setActiveSection] = useState("hover:underline");
   const [isSubMenuVisible, setIsSubMenuVisible] = useState("hover:underline");
   const observerRef = useRef<IntersectionObserver | null>(null);
-  const isManualScroll = useRef(false); // Flag to track manual scrolling
+  const isManualScroll = useRef(false);
   const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
 
   // Handle scrolling to the section
-  function handleScroll(id: string) {
+  function handleScroll(id) {
     const element = sectionRefs[id]?.current;
     if (element) {
       // Disable the observer during manual scrolling
@@ -88,47 +91,28 @@ function Menu({
   }, [sectionRefs]);
 
   return (
-    <section className="flex gap-5 h-[900px] pl-20 items-baseline relative">
+    <section className="flex gap-5 h-screen pl-14 items-baseline relative">
       <div className="heading-xl absolute">
         <p className="absolute top-40  -rotate-90 -left-[5rem]">Cosmin</p>
         <p className="absolute top-24  -rotate-90 ">Pantea</p>
       </div>
-      <div className="h-[700px] mx-12 flex flex-col items-center gap-5">
+      <div className="h-[85vh] mx-12 flex flex-col items-center gap-5">
         <div className="h-full  border-l-2 border-black" />
-        <div className="flex flex-col gap-3">
-          <img
-            className="w-6 h-6"
-            src="/instaLogo.svg"
-            alt="instagram page link"
-          />
-          <img
-            className="w-6 h-6"
-            src="/whatsappLogo.svg"
-            alt="instagram page link"
-          />
-        </div>
+        <Social />
       </div>
-      <nav className="absolute bottom-72 left-40 flex flex-col items-start gap-2">
-        <button
-          type="button"
-          onClick={() => handleScroll("about-section")}
-          className={` relative mb-2   ${
-            activeSection === "about-section"
-              ? "menu-text-active ml-2"
-              : "menu-text-regular underline-hover hover-smooth  "
-          }`}>
+      <nav className="absolute bottom-72 left-32 flex flex-col items-start gap-2">
+        <MenuItem
+          activeSection={activeSection}
+          sectionId="about-section"
+          onClick={handleScroll}>
           About
-        </button>
-        <button
-          type="button"
-          onClick={() => handleScroll("journal-section")}
-          className={` relative  ${
-            activeSection === "journal-section"
-              ? "menu-text-active ml-2"
-              : "menu-text-regular underline-hover hover-smooth  "
-          }`}>
+        </MenuItem>
+        <MenuItem
+          activeSection={activeSection}
+          sectionId="journal-section"
+          onClick={handleScroll}>
           Journal
-        </button>
+        </MenuItem>
 
         {/* Submenu for Journal Section */}
         <div
@@ -136,59 +120,26 @@ function Menu({
             isSubMenuVisible === "journal-section"
               ? "max-h-40 opacity-100 "
               : "max-h-0 opacity-0"
-          } transition-all duration-300 overflow-hidden flex flex-col text-right justify-end relative -left-[80px] items-end`}>
-          <button
-            type="button"
-            onClick={() => handleScroll("journal-section-all")}
-            className={
-              activeSection === "journal-section-all"
-                ? "font-black"
-                : "hover:underline"
-            }>
+          } transition-all pb-1 duration-300 overflow-hidden flex flex-col gap-1 text-right justify-end relative -left-[80px] items-end`}>
+          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
             All
-          </button>
-          <button
-            type="button"
-            onClick={() => handleScroll("journal-section-2024")}
-            className={
-              activeSection === "journal-section-2024"
-                ? "font-black"
-                : "hover:underline"
-            }>
+          </SubMenuItem>
+          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
             2024
-          </button>
-          <button
-            type="button"
-            onClick={() => handleScroll("journal-section-2023")}
-            className={
-              activeSection === "journal-section-2023"
-                ? "font-black"
-                : "hover:underline"
-            }>
+          </SubMenuItem>
+          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
             2023
-          </button>
-          <button
-            type="button"
-            onClick={() => handleScroll("journal-section-2022")}
-            className={
-              activeSection === "journal-section-2022"
-                ? "font-black"
-                : "hover:underline"
-            }>
+          </SubMenuItem>
+          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
             2022
-          </button>
+          </SubMenuItem>
         </div>
-
-        <button
-          type="button"
-          onClick={() => handleScroll("portfolio-section")}
-          className={` relative ${
-            activeSection === "portfolio-section"
-              ? "menu-text-active ml-2"
-              : "menu-text-regular underline-hover hover-smooth"
-          }`}>
+        <MenuItem
+          activeSection={activeSection}
+          sectionId="portfolio-section"
+          onClick={handleScroll}>
           Portfolio
-        </button>
+        </MenuItem>
 
         {/* Submenu for portfolio Section */}
         <div
@@ -196,68 +147,32 @@ function Menu({
             isSubMenuVisible === "portfolio-section"
               ? "max-h-40 opacity-100 "
               : "max-h-0 opacity-0"
-          } transition-all duration-300 overflow-hidden flex flex-col text-right justify-end relative -left-[105px] items-end`}>
-          <button
-            type="button"
-            onClick={() => handleScroll("journal-section-all")}
-            className={
-              activeSection === "journal-section-all"
-                ? "font-black"
-                : "hover:underline"
-            }>
+          } transition-all pb-1 duration-300 overflow-hidden flex flex-col gap-1 text-right justify-end relative -left-[105px] items-end`}>
+          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
             All
-          </button>
-          <button
-            type="button"
-            onClick={() => handleScroll("journal-section-2024")}
-            className={
-              activeSection === "journal-section-2024"
-                ? "font-black"
-                : "hover:underline"
-            }>
+          </SubMenuItem>
+          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
             Events
-          </button>
-          <button
-            type="button"
-            onClick={() => handleScroll("journal-section-2023")}
-            className={
-              activeSection === "journal-section-2023"
-                ? "font-black"
-                : "hover:underline"
-            }>
+          </SubMenuItem>
+          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
             Family
-          </button>
-          <button
-            type="button"
-            onClick={() => handleScroll("journal-section-2022")}
-            className={
-              activeSection === "journal-section-2022"
-                ? "font-black"
-                : "hover:underline"
-            }>
+          </SubMenuItem>
+          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
             Lifestyle
-          </button>
+          </SubMenuItem>
         </div>
-        <button
-          type="button"
-          onClick={() => handleScroll("price-section")}
-          className={` relative pb-2  ${
-            activeSection === "price-section"
-              ? "menu-text-active pl-2"
-              : "menu-text-regular underline-hover hover-smooth"
-          }`}>
+        <MenuItem
+          activeSection={activeSection}
+          sectionId="price-section"
+          onClick={handleScroll}>
           Prices
-        </button>
-        <button
-          type="button"
-          onClick={() => handleScroll("contact-section")}
-          className={` relative   ${
-            activeSection === "contact-section"
-              ? "menu-text-active pl-2"
-              : "menu-text-regular underline-hover hover-smooth"
-          }`}>
+        </MenuItem>
+        <MenuItem
+          activeSection={activeSection}
+          sectionId="contact-section"
+          onClick={handleScroll}>
           Contact
-        </button>
+        </MenuItem>
       </nav>
     </section>
   );
