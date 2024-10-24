@@ -1,6 +1,6 @@
 function Title() {
   return (
-    <div className="heading-xl absolute ">
+    <div className="heading-xl absolute mt-10">
       <p className="absolute top-32  -rotate-90 -left-[4rem] md:-left-[6rem]">
         Cosmin
       </p>

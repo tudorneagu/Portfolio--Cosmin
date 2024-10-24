@@ -36,12 +36,13 @@ const Home = React.forwardRef<HTMLDivElement>((_, ref) => {
       <div
         ref={ref}
         id="home-section"
-        className="relative h-screen overflow-clip flex justify-end">
+        className="relative h-screen overflow-clip flex justify-between ">
         {/* The image positioned on the right side */}
+        <div className="min-w-[300px] bg-white z-20 hidden md:visible"></div>
         <img
           src={images[currentImageIndex]}
           alt={`Slide ${currentImageIndex + 1}`}
-          className={`absolute right-0  object-cover h-screen transition-opacity duration-1000 ${
+          className={` object-cover h-screen transition-opacity duration-1000 ${
             fade ? "fade-enter-active" : "fade-exit-active"
           }`}
         />

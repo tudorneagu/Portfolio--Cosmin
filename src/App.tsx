@@ -55,7 +55,7 @@ function App() {
           )}
         </header>
         <main>
-          <Home />
+          <Home isMobile={isMobile} />
           <About ref={sectionRefs["about-section"]} />
           <Journal ref={sectionRefs["journal-section"]} />
           <Portfolio ref={sectionRefs["portfolio-section"]} />
