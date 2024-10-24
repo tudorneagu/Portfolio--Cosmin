@@ -64,7 +64,11 @@ function App() {
               </div>
             </>
           ) : (
-            <Menu sectionRefs={sectionRefs} />
+            <Menu
+              sectionRefs={sectionRefs}
+              toggleMenu={toggleMenu}
+              color={titleColor}
+            />
           )}
         </header>
         <main>

@@ -7,10 +7,9 @@ import SubMenuItem from "../SubMenuItem";
 function MobileMenu({
   sectionRefs,
   color,
-
   toggleMenu,
   handleToggleMenu,
-  setToggleMenu, // Received as prop
+  setToggleMenu,
 }: {
   color: string;
   sectionRefs: { [key: string]: React.RefObject<HTMLDivElement> };
