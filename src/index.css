@@ -17,6 +17,14 @@
   @apply text-[32px] leading-[32px] font-medium font-poppins;
 }
 
+.menu-text-mobile-regular {
+  @apply text-[14px] leading-[18px] font-medium font-poppins;
+}
+
+.menu-text-mobile-active {
+  @apply text-[24px] leading-[28px] font-medium font-poppins;
+}
+
 @keyframes underline-hover {
   from {
     width: 0;

@@ -23,8 +23,8 @@ function MenuItem({
           : ""
       }  ${
         activeSection === sectionId
-          ? "menu-text-active ml-2"
-          : "menu-text-regular underline-hover hover-smooth  "
+          ? "menu-text-mobile-active md:menu-text-active md:ml-2"
+          : "menu-text-mobile-regular md:menu-text-regular underline-hover hover-smooth  "
       }`}>
       {children}
     </button>

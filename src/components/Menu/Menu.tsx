@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import MenuItem from "./MenuItem";
 import Social from "./Social";
 import SubMenuItem from "./SubMenuItem";
+import Title from "./Title";
 
 function Menu({
   sectionRefs,
@@ -92,10 +93,7 @@ function Menu({
 
   return (
     <section className="flex gap-5 h-screen pl-14 items-baseline relative">
-      <div className="heading-xl absolute">
-        <p className="absolute top-40  -rotate-90 -left-[5rem]">Cosmin</p>
-        <p className="absolute top-24  -rotate-90 ">Pantea</p>
-      </div>
+      <Title />
       <div className="h-[85vh] mx-12 flex flex-col items-center gap-5">
         <div className="h-full  border-l-2 border-black" />
         <Social />
