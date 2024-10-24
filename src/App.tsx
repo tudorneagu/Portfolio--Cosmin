@@ -10,7 +10,6 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 import MobileMenu from "./components/Menu/Mobile/MobileMenu";
 import Title from "./components/Menu/Title";
-
 function App() {
   const sectionRefs = {
     "about-section": useRef<HTMLDivElement>(null),
@@ -24,6 +23,9 @@ function App() {
     "contact-section": useRef<HTMLDivElement>(null),
   };
   const [isMobile, setIsMobile] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(false); // Lifted state
+  const [titleColor, setTitleColor] = useState("black"); // Add state to hold the title color
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768); // You can adjust the width threshold for mobile
@@ -38,16 +40,26 @@ function App() {
     // Cleanup the event listener on component unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  function handleToggleMenu() {
+    setToggleMenu(!toggleMenu);
+  }
+
   return (
     <BrowserRouter>
       <div className="flex flex-col w-screen h-screen relative">
         <header className="top-0 fixed z-50 ">
           {isMobile ? (
             <>
-              <MobileMenu sectionRefs={sectionRefs} />
-              <div className="absolute  top-4 -right-4 z-50">
+              <MobileMenu
+                color={titleColor}
+                sectionRefs={sectionRefs}
+                toggleMenu={toggleMenu} // Pass the state
+                handleToggleMenu={handleToggleMenu}
+              />
+              <div className="absolute top-4 -right-4 z-50">
                 {" "}
-                <Title />
+                <Title toggleMenu={toggleMenu} color={titleColor} />
               </div>
             </>
           ) : (
@@ -55,7 +67,7 @@ function App() {
           )}
         </header>
         <main>
-          <Home />
+          <Home isMobile={isMobile} setTitleColor={setTitleColor} />
           <About ref={sectionRefs["about-section"]} />
           <Journal ref={sectionRefs["journal-section"]} />
           <Portfolio ref={sectionRefs["portfolio-section"]} />

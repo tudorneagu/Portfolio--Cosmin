@@ -1,0 +1,42 @@
+[
+  {
+    "src": "/images/001.jpg",
+    "textColor": "black"
+  },
+  {
+    "src": "/images/002.jpg",
+    "textColor": "black"
+  },
+  {
+    "src": "/images/007.jpg",
+    "textColor": "black"
+  },
+  {
+    "src": "/images/003.jpg",
+    "textColor": "white"
+  },
+  {
+    "src": "/images/004.jpg",
+    "textColor": "black"
+  },
+  {
+    "src": "/images/008.jpg",
+    "textColor": "white"
+  },
+  {
+    "src": "/images/005.jpg",
+    "textColor": "white"
+  },
+  {
+    "src": "/images/010.jpg",
+    "textColor": "black"
+  },
+  {
+    "src": "/images/009.jpg",
+    "textColor": "white"
+  },
+  {
+    "src": "/images/006.jpg",
+    "textColor": "black"
+  }
+]

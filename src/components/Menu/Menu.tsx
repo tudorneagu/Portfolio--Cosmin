@@ -6,6 +6,7 @@ import Title from "./Title";
 
 function Menu({
   sectionRefs,
+  textColor,
 }: {
   sectionRefs: { [key: string]: React.RefObject<HTMLDivElement> };
 }) {
@@ -93,7 +94,7 @@ function Menu({
 
   return (
     <section className="flex gap-5 h-screen pl-14 items-baseline relative">
-      <Title />
+      <Title textColor={textColor} />
       <div className="h-[85vh] mx-12 flex flex-col items-center gap-5">
         <div className="h-full  border-l-2 border-black" />
         <Social />

@@ -5,19 +5,30 @@ import SubMenuItem from "../SubMenuItem";
 
 function MobileMenu({
   sectionRefs,
+  color,
+  toggleMenu,
+  handleToggleMenu, // Received as prop
 }: {
+  color: string;
   sectionRefs: { [key: string]: React.RefObject<HTMLDivElement> };
+  toggleMenu: boolean; // Prop type for the toggle state
+  handleToggleMenu: () => void; // Prop type for the toggle handler
 }) {
-  const [toggleMenu, setToggleMenu] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isSubMenuVisible, setIsSubMenuVisible] = useState("");
   const observerRef = useRef<IntersectionObserver | null>(null);
   const isManualScroll = useRef(false);
   const scrollTimeout = useRef<number | null>(null);
-
-  function handleToggleMenu() {
-    setToggleMenu(!toggleMenu);
-  }
+  const textColor = toggleMenu
+    ? "text-white"
+    : color === "black"
+    ? "text-white"
+    : "text-black";
+  const bgColor = toggleMenu
+    ? "bg-black"
+    : color === "black"
+    ? "bg-black"
+    : "bg-white";
 
   // Handle scrolling to the section
   function handleScroll(id: string) {
@@ -97,7 +108,8 @@ function MobileMenu({
       <div>
         {/* Arrow Button */}
         <button
-          className="absolute top-2/4 left-4 z-50 p-2 rounded-full bg-gray-800 text-white"
+          type="button"
+          className={`absolute top-2/4 left-4 z-50 p-2 rounded-full ${bgColor} ${textColor} `}
           onClick={handleToggleMenu}>
           {toggleMenu ? "<" : ">"} {/* X for close, ☰ for menu */}
         </button>
