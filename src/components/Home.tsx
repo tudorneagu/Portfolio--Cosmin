@@ -4,11 +4,13 @@ import React, { useState, useEffect } from "react";
 const images = [
   "/images/001.jpg",
   "/images/002.jpg",
-
+  "/images/007.jpg",
   "/images/003.jpg",
   "/images/004.jpg",
-
+  "/images/008.jpg",
   "/images/005.jpg",
+  "/images/0010.jpg",
+  "/images/009.jpg",
   "/images/006.jpg",
 ];
 
@@ -39,13 +41,12 @@ const Home = React.forwardRef<HTMLDivElement>((_, ref) => {
         <img
           src={images[currentImageIndex]}
           alt={`Slide ${currentImageIndex + 1}`}
-          className={`absolute right-0 w-[90vw] h-auto transition-opacity duration-1000 ${
+          className={`absolute right-0  h-screen transition-opacity duration-1000 ${
             fade ? "fade-enter-active" : "fade-exit-active"
           }`}
         />
 
         {/* The gradient overlay aligned with the image */}
-        <div className="absolute right-0 w-[90vw] h-full bg-gradient-to-r from-white via-20% via-transparent to-transparent"></div>
       </div>
     </section>
   );
