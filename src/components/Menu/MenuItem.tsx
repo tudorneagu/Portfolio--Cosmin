@@ -1,4 +1,18 @@
-function MenuItem({ activeSection, sectionId, onClick, children }) {
+import type { ReactNode } from "react";
+
+interface MenuItemProps {
+  activeSection: string;
+  sectionId: string;
+  onClick: (id: string) => void;
+  children: ReactNode;
+}
+
+function MenuItem({
+  activeSection,
+  sectionId,
+  onClick,
+  children,
+}: MenuItemProps) {
   return (
     <button
       type="button"

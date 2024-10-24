@@ -1,4 +1,17 @@
-function SubMenuItem({ children, activeSection, onClick, sectionId }) {
+import type { ReactNode } from "react";
+
+interface SubMenuItemProps {
+  activeSection: string;
+  sectionId: string;
+  onClick: (id: string) => void;
+  children: ReactNode;
+}
+function SubMenuItem({
+  children,
+  activeSection,
+  onClick,
+  sectionId,
+}: SubMenuItemProps) {
   return (
     <button
       type="button"
