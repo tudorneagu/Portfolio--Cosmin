@@ -121,16 +121,28 @@ function Menu({
               ? "max-h-40 opacity-100 "
               : "max-h-0 opacity-0"
           } transition-all pb-1 duration-300 overflow-hidden flex flex-col gap-1 text-right justify-end relative -left-[80px] items-end`}>
-          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
+          <SubMenuItem
+            activeSection={activeSection}
+            sectionId="Lifestyle-section"
+            onClick={handleScroll}>
             All
           </SubMenuItem>
-          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
+          <SubMenuItem
+            activeSection={activeSection}
+            sectionId="Lifestyle-section"
+            onClick={handleScroll}>
             2024
           </SubMenuItem>
-          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
+          <SubMenuItem
+            activeSection={activeSection}
+            sectionId="Lifestyle-section"
+            onClick={handleScroll}>
             2023
           </SubMenuItem>
-          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
+          <SubMenuItem
+            activeSection={activeSection}
+            sectionId="Lifestyle-section"
+            onClick={handleScroll}>
             2022
           </SubMenuItem>
         </div>
@@ -148,16 +160,28 @@ function Menu({
               ? "max-h-40 opacity-100 "
               : "max-h-0 opacity-0"
           } transition-all pb-1 duration-300 overflow-hidden flex flex-col gap-1 text-right justify-end relative -left-[105px] items-end`}>
-          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
+          <SubMenuItem
+            activeSection={activeSection}
+            sectionId="Lifestyle-section"
+            onClick={handleScroll}>
             All
           </SubMenuItem>
-          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
+          <SubMenuItem
+            activeSection={activeSection}
+            sectionId="Lifestyle-section"
+            onClick={handleScroll}>
             Events
           </SubMenuItem>
-          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
+          <SubMenuItem
+            activeSection={activeSection}
+            sectionId="Lifestyle-section"
+            onClick={handleScroll}>
             Family
           </SubMenuItem>
-          <SubMenuItem sectionId="Lifestyle-section" onClick={handleScroll}>
+          <SubMenuItem
+            activeSection={activeSection}
+            sectionId="Lifestyle-section"
+            onClick={handleScroll}>
             Lifestyle
           </SubMenuItem>
         </div>
