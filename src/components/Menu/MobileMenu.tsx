@@ -1,22 +1,27 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import MenuItem from "../MenuItem";
+import { NavContext } from "../../contexts/NavContext";
+import MenuItem from "./MenuItem";
 
-import SubMenuItem from "../SubMenuItem";
+import SubMenuItem from "./SubMenuItem";
 
-function MobileMenu({
-  sectionRefs,
-  color,
-  toggleMenu,
-  handleToggleMenu,
-  setToggleMenu,
-}: {
-  color: string;
-  sectionRefs: { [key: string]: React.RefObject<HTMLDivElement> };
-  toggleMenu: boolean;
-  setToggleMenu: Dispatch<SetStateAction<boolean>>; // Prop type for the toggle state
-  handleToggleMenu: () => void; // Prop type for the toggle handler
-}) {
+function MobileMenu() {
+  //  {
+  //   color: string;
+  //   sectionRefs: { [key: string]: React.RefObject<HTMLDivElement> };
+  //   toggleMenu: boolean;
+  //   setToggleMenu: Dispatch<SetStateAction<boolean>>; // Prop type for the toggle state
+  //   handleToggleMenu: () => void; // Prop type for the toggle handler
+  const {
+    titleColor,
+    sectionRefs,
+    toggleMenu,
+    setToggleMenu,
+    handleToggleMenu,
+    handleSubMenuClick,
+    eventYears,
+    eventCategories,
+  } = useContext(NavContext);
   const [activeSection, setActiveSection] = useState("");
   const [isSubMenuVisible, setIsSubMenuVisible] = useState("");
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -24,12 +29,12 @@ function MobileMenu({
   const scrollTimeout = useRef<number | null>(null);
   const textColor = toggleMenu
     ? "text-white"
-    : color === "black"
+    : titleColor === "black"
     ? "text-white"
     : "text-black";
   const bgColor = toggleMenu
     ? "bg-black"
-    : color === "black"
+    : titleColor === "black"
     ? "bg-black"
     : "bg-white";
 
@@ -144,29 +149,21 @@ function MobileMenu({
                   : "max-h-0 opacity-0"
               } transition-all pb-1 duration-300 overflow-hidden flex flex-col gap-1 text-right justify-end relative  mr-2 items-start`}>
               <SubMenuItem
+                key="All"
                 activeSection={activeSection}
-                sectionId="Lifestyle-section"
-                onClick={handleScroll}>
+                sectionId="All"
+                onClick={handleSubMenuClick}>
                 All
               </SubMenuItem>
-              <SubMenuItem
-                activeSection={activeSection}
-                sectionId="Lifestyle-section"
-                onClick={handleScroll}>
-                2024
-              </SubMenuItem>
-              <SubMenuItem
-                activeSection={activeSection}
-                sectionId="Lifestyle-section"
-                onClick={handleScroll}>
-                2023
-              </SubMenuItem>
-              <SubMenuItem
-                activeSection={activeSection}
-                sectionId="Lifestyle-section"
-                onClick={handleScroll}>
-                2022
-              </SubMenuItem>
+              {eventYears.map((year) => (
+                <SubMenuItem
+                  key={year}
+                  activeSection={activeSection}
+                  sectionId={year}
+                  onClick={handleSubMenuClick}>
+                  {year}
+                </SubMenuItem>
+              ))}
             </div>
             <MenuItem
               activeSection={activeSection}
@@ -183,29 +180,21 @@ function MobileMenu({
                   : "max-h-0 opacity-0"
               } transition-all pb-1 duration-300 overflow-hidden flex flex-col gap-1 text-right justify-end ml-2 items-end`}>
               <SubMenuItem
+                key="All"
                 activeSection={activeSection}
-                sectionId="Lifestyle-section"
+                sectionId="All"
                 onClick={handleScroll}>
                 All
               </SubMenuItem>
-              <SubMenuItem
-                activeSection={activeSection}
-                sectionId="Lifestyle-section"
-                onClick={handleScroll}>
-                Events
-              </SubMenuItem>
-              <SubMenuItem
-                activeSection={activeSection}
-                sectionId="Lifestyle-section"
-                onClick={handleScroll}>
-                Family
-              </SubMenuItem>
-              <SubMenuItem
-                activeSection={activeSection}
-                sectionId="Lifestyle-section"
-                onClick={handleScroll}>
-                Lifestyle
-              </SubMenuItem>
+              {eventCategories.map((categories) => (
+                <SubMenuItem
+                  key={categories}
+                  activeSection={activeSection}
+                  sectionId={categories}
+                  onClick={handleScroll}>
+                  {categories}
+                </SubMenuItem>
+              ))}
             </div>
             <MenuItem
               activeSection={activeSection}

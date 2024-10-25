@@ -1,12 +1,18 @@
 // Journal.tsx
-import React from "react";
+import { useContext } from "react";
+import { NavContext } from "../contexts/NavContext";
 
-const Price = React.forwardRef<HTMLDivElement>((_, ref) => {
+const Price = () => {
+  const { sectionRefs } = useContext(NavContext);
+  const priceSectionRef = sectionRefs["price-section"];
   return (
-    <div ref={ref} id="price-section" className="h-screen bg-blue-300">
+    <div
+      ref={priceSectionRef}
+      id="price-section"
+      className="h-screen bg-blue-300">
       Prices
     </div>
   );
-});
+};
 
 export default Price;

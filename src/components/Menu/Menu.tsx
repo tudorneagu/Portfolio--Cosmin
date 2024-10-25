@@ -1,18 +1,22 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import MenuItem from "./MenuItem";
 import Social from "./Social";
 import SubMenuItem from "./SubMenuItem";
 import Title from "./Title";
+import { NavContext } from "../../contexts/NavContext";
 
-function Menu({
-  sectionRefs,
-  toggleMenu,
-  color,
-}: {
-  sectionRefs: { [key: string]: React.RefObject<HTMLDivElement> };
-  toggleMenu: boolean;
-  color: string;
-}) {
+function Menu() {
+  //  {
+  //   sectionRefs: { [key: string]: React.RefObject<HTMLDivElement> };
+  //   toggleMenu: boolean;
+  //   color: string;
+  const {
+    sectionRefs,
+    eventYears,
+    eventCategories,
+    handleSubMenuClick,
+    activeSubMenu,
+  } = useContext(NavContext);
   const [activeSection, setActiveSection] = useState("hover:underline");
   const [isSubMenuVisible, setIsSubMenuVisible] = useState("hover:underline");
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -97,7 +101,7 @@ function Menu({
 
   return (
     <section className="flex gap-5 h-screen pl-14 items-baseline relative">
-      <Title toggleMenu={toggleMenu} color={color} />
+      <Title />
       <div className="h-[85vh] mx-12 flex flex-col items-center gap-5">
         <div className="h-full  border-l-2 border-black" />
         <Social />
@@ -124,29 +128,21 @@ function Menu({
               : "max-h-0 opacity-0"
           } transition-all pb-1 duration-300 overflow-hidden flex flex-col gap-1 text-right justify-end relative -left-[80px] items-end`}>
           <SubMenuItem
-            activeSection={activeSection}
-            sectionId="Lifestyle-section"
-            onClick={handleScroll}>
+            key="All"
+            activeSection={activeSubMenu}
+            sectionId="All"
+            onClick={handleSubMenuClick}>
             All
           </SubMenuItem>
-          <SubMenuItem
-            activeSection={activeSection}
-            sectionId="Lifestyle-section"
-            onClick={handleScroll}>
-            2024
-          </SubMenuItem>
-          <SubMenuItem
-            activeSection={activeSection}
-            sectionId="Lifestyle-section"
-            onClick={handleScroll}>
-            2023
-          </SubMenuItem>
-          <SubMenuItem
-            activeSection={activeSection}
-            sectionId="Lifestyle-section"
-            onClick={handleScroll}>
-            2022
-          </SubMenuItem>
+          {eventYears.map((year) => (
+            <SubMenuItem
+              key={year}
+              activeSection={activeSubMenu}
+              sectionId={year}
+              onClick={handleSubMenuClick}>
+              {year}
+            </SubMenuItem>
+          ))}
         </div>
         <MenuItem
           activeSection={activeSection}
@@ -163,29 +159,21 @@ function Menu({
               : "max-h-0 opacity-0"
           } transition-all pb-1 duration-300 overflow-hidden flex flex-col gap-1 text-right justify-end relative -left-[105px] items-end`}>
           <SubMenuItem
-            activeSection={activeSection}
-            sectionId="Lifestyle-section"
-            onClick={handleScroll}>
+            key="All"
+            activeSection={activeSubMenu}
+            sectionId="All"
+            onClick={handleSubMenuClick}>
             All
           </SubMenuItem>
-          <SubMenuItem
-            activeSection={activeSection}
-            sectionId="Lifestyle-section"
-            onClick={handleScroll}>
-            Events
-          </SubMenuItem>
-          <SubMenuItem
-            activeSection={activeSection}
-            sectionId="Lifestyle-section"
-            onClick={handleScroll}>
-            Family
-          </SubMenuItem>
-          <SubMenuItem
-            activeSection={activeSection}
-            sectionId="Lifestyle-section"
-            onClick={handleScroll}>
-            Lifestyle
-          </SubMenuItem>
+          {eventCategories.map((categories) => (
+            <SubMenuItem
+              key={categories}
+              activeSection={activeSubMenu}
+              sectionId={categories}
+              onClick={handleSubMenuClick}>
+              {categories}
+            </SubMenuItem>
+          ))}
         </div>
         <MenuItem
           activeSection={activeSection}

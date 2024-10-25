@@ -6,6 +6,9 @@ module.exports = {
         megrim: ["Megrim", "cursive"],
         poppins: ["Poppins", "cursive"],
       },
+      colors: {
+        background: "#F8F8F8",
+      },
     },
   },
   plugins: [],

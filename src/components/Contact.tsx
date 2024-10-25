@@ -1,12 +1,18 @@
 // Contact.tsx
-import React from "react";
+import { useContext } from "react";
+import { NavContext } from "../contexts/NavContext";
 
-const Contact = React.forwardRef<HTMLDivElement>((_, ref) => {
+const Contact = () => {
+  const { sectionRefs } = useContext(NavContext);
+  const contactSectionRef = sectionRefs["contact-section"];
   return (
-    <div ref={ref} id="contact-section" className="h-screen bg-blue-300">
+    <div
+      ref={contactSectionRef}
+      id="contact-section"
+      className="h-screen bg-blue-300">
       Contact
     </div>
   );
-});
+};
 
 export default Contact;

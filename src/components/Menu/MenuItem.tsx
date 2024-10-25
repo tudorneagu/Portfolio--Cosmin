@@ -1,12 +1,4 @@
-import type { ReactNode } from "react";
-
-interface MenuItemProps {
-  activeSection: string;
-  sectionId: string;
-  onClick: (id: string) => void;
-  children: ReactNode;
-}
-
+import type { MenuItemProps } from "../../@types/menu";
 function MenuItem({
   activeSection,
   sectionId,

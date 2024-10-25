@@ -25,6 +25,18 @@
   @apply text-[24px] leading-[28px] font-medium font-poppins;
 }
 
+.text-m-regular {
+  @apply text-[16px] leading-[20px] font-normal font-poppins;
+}
+
+.text-s-regular {
+  @apply text-[14px] leading-[18px] font-normal font-poppins;
+}
+
+.text-xs-regular {
+  @apply text-[12px] leading-[14px] font-normal font-poppins;
+}
+
 @keyframes underline-hover {
   from {
     width: 0;

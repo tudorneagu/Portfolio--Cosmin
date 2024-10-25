@@ -1,10 +1,9 @@
-const Title = ({
-  color,
-  toggleMenu,
-}: {
-  toggleMenu: boolean;
-  color: string;
-}) => {
+import { useContext } from "react";
+import { NavContext } from "../../contexts/NavContext";
+
+const Title = () => {
+  const { color, toggleMenu } = useContext(NavContext);
+
   const textColor = toggleMenu
     ? "text-black"
     : color === "black"

@@ -18,8 +18,8 @@ function SubMenuItem({
       onClick={() => onClick(sectionId)}
       className={`relative ${
         activeSection === sectionId
-          ? "menu-text-mobile-active md: menu-text-active md:ml-2"
-          : "menu-text-mobile-regular md: menu-text-regular underline-hover hover-smooth"
+          ? "font-bold"
+          : "menu-text-mobile-regular md:menu-text-regular underline-hover hover-smooth"
       }`}>
       {children}
     </button>
