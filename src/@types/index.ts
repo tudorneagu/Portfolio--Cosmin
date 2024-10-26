@@ -12,6 +12,7 @@ interface EventEntry {
 }
 
 interface ISectionRefs {
+  [key: string]: React.RefObject<HTMLDivElement>;
   "about-section": React.RefObject<HTMLDivElement>;
   "journal-section": React.RefObject<HTMLDivElement>;
   "journal-section-all": React.RefObject<HTMLDivElement>;
