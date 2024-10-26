@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef, useContext } from "react";
-import type { Dispatch, SetStateAction } from "react";
 import { NavContext } from "../../contexts/NavContext";
 import MenuItem from "./MenuItem";
 
