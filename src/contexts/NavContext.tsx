@@ -2,8 +2,8 @@ import { createContext, useState, useEffect, useRef } from "react";
 import type { ReactNode } from "react";
 import data from "../data/data.json";
 import type { INavContext } from "../@types";
-
-const NavContext = createContext<INavContext | null>(null);
+// @ts-ignore: i dont need to initialise
+const NavContext = createContext<INavContext>();
 
 function NavProvider({ children }: { children: ReactNode }) {
   const eventYears = [...new Set(data.map((event) => event.year))];
