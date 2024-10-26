@@ -37,5 +37,5 @@ export interface INavContext {
   activeSubMenu: string;
   setActiveSubMenu: React.Dispatch<React.SetStateAction<string>>;
   handleToggleMenu: () => void;
-  handleSubMenuClick: () => void;
+  handleSubMenuClick: (id: string) => void;
 }
