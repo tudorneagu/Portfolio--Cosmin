@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import data from "../data/data.json";
 import type { INavContext } from "../@types";
 
-const NavContext = createContext<INavContext>();
+const NavContext = createContext<INavContext | null>(null);
 
 function NavProvider({ children }: { children: ReactNode }) {
   const eventYears = [...new Set(data.map((event) => event.year))];
