@@ -39,6 +39,7 @@ function NavProvider({ children }: { children: ReactNode }) {
 
   function handleSubMenuClick(id: string) {
     setActiveSubMenu(id);
+    setToggleMenu(!toggleMenu);
     console.log("Clicked:", id); // Logs the correct value immediately
     console.log("Current activeSubMenu:", id); // Ensures correct use without delay
   }

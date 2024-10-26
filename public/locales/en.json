@@ -1,0 +1,74 @@
+{
+  "under_construction": "Still Cooking...Page under Construction...",
+  "under_construction_1": "Still Cooking...Section under Construction...",
+  "nav_home": "Home",
+  "nav_about": "About",
+  "nav_stack": "Stack",
+  "nav_projects": "Projects",
+  "nav_contact": "Contact",
+
+  "hero_welcome_message": "Hello, I'm Tudor,",
+  "hero_position": "Full Stack Developer,",
+  "hero_description": "I am currently seeking a job or internship to apply my skills in real-world projects.",
+  "hero_resume": "Download my Resume",
+
+  "stack_title": "Experienced Across Multiple Tools",
+  "stack_description": "Bringing creativity and technical proficiency to building responsive web applications and enhancing user experiences",
+  "stack_methods_1": "Various",
+  "stack_methods_2": "Approaches",
+  "stack_button": "Stack & Skills",
+
+  "hero_contact_title": "Let's Work Together",
+  "hero_contact_button": "Send me a Message",
+  "hero_contact_phone": "Phone:",
+
+  "about_title": "My Journey",
+  "about_description_1": "After a rewarding career in architecture, I transitioned into full-stack web development, blending my design and problem-solving skills with a passion for technology. My background in architecture allows me to approach challenges with creativity and structure, applying the same attention to detail and strategic thinking to digital solutions.",
+  "about_description_2": "By combining these strengths with technical expertise, I build scalable, user-friendly applications. My experience managing large projects has honed my ability to deliver results that are both practical and innovative, ensuring efficient solutions that meet user needs while exceeding expectations.",
+
+  "contact_firstName": "First Name",
+  "contact_p_firstName": "Your First Name",
+  "contact_lastName": "Last Name",
+  "contact_p_lastName": "Your Name",
+  "contact_email": "E-mail",
+  "contact_p_email": "bob.newton@mail.com",
+  "contact_message": "Message",
+  "contact_p_message": "Your message",
+  "contact_button": "Send Message",
+  "contact_h1": "Let's Work Together!",
+  "contact_p": "I'm looking forward to your message",
+
+  "projects_preview_demo": "View live demo",
+  "projects_preview_more": "More Details",
+
+  "footer_copyright": "© Copyright 2024. All rights Reserved.",
+
+  "projects": {
+    "title": "My work",
+    "catchPhrase": "Explore some of my key projects—each one reflects my learning journey, showcasing the skills and expertise I've gained along the way.",
+    "amazonClone": {
+      "date": "August 2024",
+      "description": "A full-stack e-commerce application inspired by Amazon.",
+      "fullDescription": "This project is a clone of the Amazon website, developed as a full-stack application. It allows users to browse products, add items to the cart, and place orders. The frontend is built using React, styled with Tailwind CSS, and the backend is developed with Node.js, Express, and Prisma connected to a PostgreSQL database.",
+      "notes": "The project may take some time to show in live demo as the backend needs time to spin up on render."
+    },
+    "okanban": {
+      "date": "July 2024",
+      "description": "A project management tool inspired by Kanban boards.",
+      "fullDescription": "Okanban is a project management tool that allows users to create boards, manage tasks, and collaborate in real-time. The frontend is powered by React and Tailwind CSS, while the backend uses Node.js and MongoDB to store project data and manage user accounts.",
+      "notes": "The project may take some time to show in live demo as the backend needs time to spin up on render."
+    },
+    "worldWise": {
+      "date": "June 2024",
+      "description": "An app that allows you to track destinations that you have visited around the world.",
+      "fullDescription": "World Wise is an app for tracking destinations you’ve visited. Users can log their travel history, view a map of visited places, and add new destinations to their list.",
+      "notes": "The project may take some time to show in live demo as the backend needs time to spin up on render."
+    },
+    "usePopcorn": {
+      "date": "May 2024",
+      "description": "An app that allows you to search for movies that you watched and rate them.",
+      "fullDescription": "Use Popcorn is a movie rating app where users can search for movies they’ve watched, add them to a watchlist, and rate them based on their viewing experience. The app features smooth animations with Framer Motion and is built using React and Tailwind CSS.",
+      "notes": "The project may take some time to show in live demo as the backend needs time to spin up on render."
+    }
+  }
+}

@@ -1,9 +1,9 @@
 // App.tsx
-import { BrowserRouter } from "react-router-dom";
-import { useContext } from "react";
+
+import { useContext, useState, useEffect } from "react";
 import Menu from "./components/Menu/Menu";
 import About from "./components/About";
-import Journal from "./components/Journal";
+import Journal from "./components/Menu/Journal";
 import Portfolio from "./components/Portfolio";
 import Price from "./components/Price";
 import Contact from "./components/Contact";
@@ -14,9 +14,16 @@ import { NavContext } from "./contexts/NavContext";
 
 function App() {
   const { isMobile } = useContext(NavContext);
+  const [langFr, setLangFr] = useState<boolean>(false);
+
+  useEffect(() => {
+    const lang = localStorage.getItem("i18nextLng");
+    if (lang === "fr") setLangFr(true);
+  }, []);
+  console.log(langFr);
   return (
-    <BrowserRouter>
-      <div className="flex flex-col w-screen h-screen relative">
+    <div className="md:flex md:flex-col h-full bg-background md:items-center relative">
+      <div className=" md:max-w-[1400px]">
         <header className="top-0 fixed z-50 ">
           {isMobile ? (
             <>
@@ -38,7 +45,7 @@ function App() {
           <Contact />
         </main>
       </div>
-    </BrowserRouter>
+    </div>
   );
 }
 

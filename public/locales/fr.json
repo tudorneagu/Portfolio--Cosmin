@@ -1,0 +1,75 @@
+{
+  "under_construction": "Page encore en cuisine...",
+  "under_construction_1": "Section encore en cuisine...",
+
+  "nav_home": "Accueil",
+  "nav_about": "À propos",
+  "nav_stack": "Stack",
+  "nav_projects": "Projets",
+  "nav_contact": "Contact",
+
+  "hero_welcome_message": "Salut, moi c'est Tudor,",
+  "hero_position": "Développeur Full-Stack,",
+  "hero_description": "Je suis actuellement à la recherche d'un emploi ou d'un stage pour appliquer mes compétences dans des projets concrets",
+  "hero_resume": "Téléchargez mon CV",
+
+  "stack_title": "Expérimenté avec diverses technologies",
+  "stack_description": "Alliant créativité et expertise technique pour développer des applications web réactives et améliorer l'expérience utilisateur",
+  "stack_methods_1": "Divers",
+  "stack_methods_2": "Approches",
+  "stack_button": "Stack & Compétences",
+
+  "hero_contact_title": "Travaillons Ensemble",
+  "hero_contact_button": "Envoyez-moi un Message",
+  "hero_contact_phone": "Portable :",
+
+  "about_title": "Mon Parcours",
+  "about_description_1": "Après une carrière enrichissante en architecture, je me suis reconverti dans le développement web full-stack, combinant mes compétences en design et en résolution de problèmes avec une passion pour la technologie. Mon parcours en architecture me permet d'aborder les défis avec créativité et méthode, appliquant la même attention aux détails et la même pensée stratégique aux solutions numériques.",
+  "about_description_2": "En associant ces atouts à une expertise technique, je conçois des applications évolutives et conviviales. Mon expérience dans la gestion de projets complexes a affiné ma capacité à fournir des résultats à la fois pratiques et innovants, garantissant des solutions efficaces qui répondent aux besoins des utilisateurs tout en dépassant leurs attentes.",
+
+  "contact_firstName": "Prénom",
+  "contact_p_firstName": "Votre prénom",
+  "contact_lastName": "Nom",
+  "contact_p_lastName": "Votre nom",
+  "contact_email": "E-mail",
+  "contact_p_email": "nicole.martin@mail.fr",
+  "contact_message": "Message",
+  "contact_p_message": "Votre message",
+  "contact_button": "Envoyer le message",
+  "contact_h1": "Travaillons ensemble !",
+  "contact_p": "J'ai hâte de recevoir ton message",
+
+  "projects_preview_demo": "Voir la démo",
+  "projects_preview_more": "Plus de détails",
+
+  "footer_copyright": "© Copyright 2024. Tous les droits réservés.",
+
+  "projects": {
+    "title": "Mon travail",
+    "catchPhrase": "Voici quelques projets qui reflètent mon parcours d'apprentissage et les compétences que j'ai développées.",
+    "amazonClone": {
+      "date": "Août 2024",
+      "description": "Une application e-commerce full-stack inspirée d'Amazon.",
+      "fullDescription": "Ce projet est un clone du site Amazon, développé comme une application full-stack. Il permet aux utilisateurs de parcourir les produits, d'ajouter des articles au panier et de passer des commandes. Le frontend est construit avec React et Tailwind CSS, tandis que le backend est développé avec Node.js, Express et Prisma, relié à une base de données PostgreSQL.",
+      "notes": "test"
+    },
+    "okanban": {
+      "date": "Juillet 2024",
+      "description": "Un outil de gestion de projet inspiré des tableaux Kanban.",
+      "fullDescription": "Okanban est un outil de gestion de projet qui permet aux utilisateurs de créer des tableaux, de gérer des tâches et de collaborer en temps réel. Le frontend est alimenté par React et Tailwind CSS, tandis que le backend utilise Node.js et MongoDB pour stocker les données du projet et gérer les comptes des utilisateurs.",
+      "notes": "test"
+    },
+    "worldWise": {
+      "date": "Juin 2024",
+      "description": "Une application qui vous permet de suivre les destinations que vous avez visitées à travers le monde.",
+      "fullDescription": "World Wise est une application qui permet de suivre les destinations que vous avez visitées. Les utilisateurs peuvent enregistrer leur historique de voyage, voir une carte des lieux visités et ajouter de nouvelles destinations à leur liste.",
+      "notes": "test"
+    },
+    "usePopcorn": {
+      "date": "Mai 2024",
+      "description": "Une application qui vous permet de rechercher des films que vous avez vus et de les noter.",
+      "fullDescription": "Use Popcorn est une application de notation de films où les utilisateurs peuvent rechercher des films qu'ils ont vus, les ajouter à une liste de visionnage et les noter en fonction de leur expérience de visionnage. L'application dispose d'animations fluides grâce à Framer Motion et est construite avec React et Tailwind CSS.",
+      "notes": "test"
+    }
+  }
+}

@@ -25,6 +25,18 @@
   @apply text-[24px] leading-[28px] font-medium font-poppins;
 }
 
+.text-l-regular {
+  @apply text-[24px] leading-[32px] font-normal font-poppins;
+}
+
+.text-l-bold {
+  @apply text-[24px] leading-[32px] font-bold font-poppins;
+}
+
+.text-m-bold {
+  @apply text-[16px] leading-[20px] font-bold font-poppins;
+}
+
 .text-m-regular {
   @apply text-[16px] leading-[20px] font-normal font-poppins;
 }
