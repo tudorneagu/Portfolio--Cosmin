@@ -28,6 +28,7 @@ function NavProvider({ children }: { children: ReactNode }) {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
+    //test
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
