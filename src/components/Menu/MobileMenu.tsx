@@ -16,6 +16,7 @@ function MobileMenu() {
     sectionRefs,
     toggleMenu,
     activeSubMenu,
+    setActiveSubMenu,
     setToggleMenu,
     handleToggleMenu,
     handleSubMenuClick,
@@ -47,6 +48,7 @@ function MobileMenu() {
 
       element.scrollIntoView({ behavior: "smooth" });
       setActiveSection(id);
+      setActiveSubMenu("All");
 
       if (id === "journal-section" || id === "portfolio-section") {
         setIsSubMenuVisible(id);
@@ -124,10 +126,10 @@ function MobileMenu() {
 
         {/* Sliding Menu */}
         <section
-          className={`transform transition-transform duration-500 ease-in-out h-screen w-[160px] bg-white flex fixed top-0 left-0 z-40 flex gap-5 pl-14 items-baseline ${
+          className={`transform transition-transform duration-500 ease-in-out h-screen w-[180px] bg-white  fixed top-0 left-0 z-40 flex gap-5 pl-14 items-baseline ${
             toggleMenu ? "translate-x-0" : "-translate-x-full"
           }`}>
-          <nav className="absolute bottom-36 right-4 flex flex-col items-end gap-2">
+          <nav className="absolute bottom-64 right-4 flex flex-col items-end gap-2">
             <MenuItem
               activeSection={activeSection}
               sectionId="about-section"
@@ -183,7 +185,7 @@ function MobileMenu() {
                 key="All"
                 activeSection={activeSection}
                 sectionId="All"
-                onClick={handleScroll}>
+                onClick={handleSubMenuClick}>
                 All
               </SubMenuItem>
               {eventCategories.map((categories) => (
@@ -191,7 +193,7 @@ function MobileMenu() {
                   key={categories}
                   activeSection={activeSection}
                   sectionId={categories}
-                  onClick={handleScroll}>
+                  onClick={handleSubMenuClick}>
                   {categories}
                 </SubMenuItem>
               ))}
@@ -211,13 +213,13 @@ function MobileMenu() {
           </nav>
         </section>
         <section
-          className={`absolute bottom-14  capitalize  [writing-mode:vertical-lr] rotate-180 menu-text-active left-[10.5rem] transform transition-transform duration-500 ease-in-out ${
+          className={`absolute bottom-8  capitalize  [writing-mode:vertical-lr] rotate-180 menu-text-active left-[8.5rem] z-50 transform transition-transform duration-500 ease-in-out ${
             toggleMenu ? "translate-x-0" : "-translate-x-[120px]"
           }`}>
           <div className="flex gap-2">
             <h2>{activeSection ? `${sectionName} ` : ""}</h2>
             {activeSection === "journal-section" ||
-            activeSection === "portofolio-section" ? (
+            activeSection === "portfolio-section" ? (
               <h3 className="text-m-regular">
                 {activeSection ? ` / ${activeSubMenu} ` : ""}
               </h3>

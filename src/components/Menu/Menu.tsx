@@ -16,6 +16,7 @@ function Menu() {
     eventCategories,
     handleSubMenuClick,
     activeSubMenu,
+    setActiveSubMenu,
   } = useContext(NavContext);
   const [activeSection, setActiveSection] = useState("hover:underline");
   const [isSubMenuVisible, setIsSubMenuVisible] = useState("hover:underline");
@@ -33,7 +34,7 @@ function Menu() {
 
       element.scrollIntoView({ behavior: "smooth" });
       setActiveSection(id);
-
+      setActiveSubMenu("All");
       if (id === "journal-section" || id === "portfolio-section") {
         setIsSubMenuVisible(id);
       } else {

@@ -1,6 +1,7 @@
 interface Photo {
   description: string;
-  photo: string;
+  src: string;
+  orientation: string;
 }
 
 interface EventEntry {

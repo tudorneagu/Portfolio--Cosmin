@@ -14,7 +14,7 @@ const Journal = () => {
     <section
       ref={journalSectionRef}
       id="journal-section"
-      className="h-screen bg-background flex flex-col pt-40 md:pt-[450px] pr-5 md:pr-0 items-end gap-5 mb-4 ">
+      className="min-h-screen bg-background flex flex-col pt-40 md:pt-[450px] pr-5 md:pr-0 items-end gap-5 mb-4 ">
       <h1 className="text-l-bold w-[300px] md:w-[500px] mb-10">Events:</h1>
       {yearSelection.map((event) => (
         <article
